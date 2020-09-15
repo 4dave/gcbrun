@@ -3,3 +3,5 @@ steps:
   args: ['build', '-t', 'gcr.io/gcbrun/gcbrun:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/gcbrun/gcbrun:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'run', 'deploy', 'gcbrun', '--region=us-central1', '--platform=managed', '--image=gcr.io/gcbrun/gcbrun:$SHORT_SHA']
