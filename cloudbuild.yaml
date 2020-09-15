@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/gcbrun/gcbrun:$SHORT_SHA', '.']
- - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '-t', 'gcr.io/gcbrun/gcbrun:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/godave/gcbrun/gcbrun:$SHORT_SHA']
